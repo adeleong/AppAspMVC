@@ -9,9 +9,9 @@ namespace ControllerPreview.Controllers
     public class HelloController : Controller
     {
         // GET: Hello
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is an <br>HTML</br> string";
+            return View();
         }
         public string HelloWorld()
         {
