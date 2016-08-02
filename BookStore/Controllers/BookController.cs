@@ -15,16 +15,33 @@ namespace BookStore.Controllers
         private BookDBContext db = new BookDBContext();
 
         // GET: Book
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string bookGenre, string searchString)
         {
+
+            var GenreList = new List<string>();
+
+            var GenreQuery = from g in db.Books
+                             orderby g.Genre
+                             select g.Genre;
+
+            GenreList.AddRange(GenreQuery.Distinct());
+            ViewBag.BookGenre = new SelectList(GenreList);
+
             var books = from b in db.Books
                         select b;
 
-            if ( ! String.IsNullOrEmpty(searchString))
+
+            if (!String.IsNullOrEmpty(searchString))
             {
                 books = books.Where(s => s.Name.Contains(searchString));
             }
 
+
+            if (!String.IsNullOrEmpty(bookGenre))
+            {
+                books = books.Where(x => x.Genre == bookGenre);
+            }
+                          
             return View(books);
         }
 
