@@ -14,6 +14,32 @@ namespace BookStore.Controllers
     {
         private BookDBContext db = new BookDBContext();
 
+        public ActionResult _BookSearch(string query)
+        {
+            var books = GetBooks(query);
+            return PartialView(books);
+        }
+
+        private List<Book> GetBooks(string query)
+        {
+            return db.Books
+                .Where(b => b.Name.Contains(query))
+                .ToList();
+        }
+
+        public ActionResult BargainBook()
+        {
+            var book = GetBargainBook();
+            return PartialView("_BargainBook", book);
+        }
+
+        private Book GetBargainBook()
+        {
+            return db.Books
+                .OrderBy(b => b.Price)
+                .First();   
+
+        }
         // GET: Book
         public ActionResult Index(string bookGenre, string searchString)
         {

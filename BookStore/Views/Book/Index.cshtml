@@ -6,19 +6,25 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-
-    @using (Html.BeginForm())
-    {
+<div id="searchResults">
     <p>
-        Genre: @Html.DropDownList("bookGenre", "All")
-        Name: @Html.TextBox("SearchString") <br />
-        <input type="submit" value="Filter" />
-    </p>
-    }
+        @Html.ActionLink("Create New", "Create")
 
-</p>
+        @using (Ajax.BeginForm("_BookSearch", "Book",
+            new AjaxOptions
+            {
+                InsertionMode = InsertionMode.InsertAfter,
+                HttpMethod = "Get",
+                LoadingElementId = "ajax-loader",
+                UpdateTargetId = "searchResults",
+            }))
+        {
+            <input type="text" name="query" />
+            <input type="submit" value="Find Title" />
+            <img id="ajax-loader" src="~/Content/Images/ajax-loader.gif" style="display:none" />
+        }
+        </p>
+</div>
 <table class="table">
     <tr>
         <th>
@@ -56,6 +62,17 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>
-}
+   
+}   
 
 </table>
+
+<div id="bargainBook">
+    @Ajax.ActionLink("Click for the Bargain Book!", "BargainBook",
+         new AjaxOptions
+         {
+             UpdateTargetId = "bargainBook",
+             InsertionMode = InsertionMode.Replace,
+             HttpMethod = "Get"
+         })
+</div>
