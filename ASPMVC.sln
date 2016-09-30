@@ -9,6 +9,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerPreview", "Contro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore", "BookStore\BookStore.csproj", "{34CFC912-1A16-430A-97D0-D7ED6FE952C1}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite3", "..\..\WebSites\WebSite3\", "{7461DCE8-0A39-458F-9BCA-1C7CE8C6F79D}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55215"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\WebSite3\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55215\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55215"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\WebSite3\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55215\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55215"
+		SlnRelativePath = "..\..\WebSites\WebSite3\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +49,10 @@ Global
 		{34CFC912-1A16-430A-97D0-D7ED6FE952C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34CFC912-1A16-430A-97D0-D7ED6FE952C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34CFC912-1A16-430A-97D0-D7ED6FE952C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7461DCE8-0A39-458F-9BCA-1C7CE8C6F79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7461DCE8-0A39-458F-9BCA-1C7CE8C6F79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7461DCE8-0A39-458F-9BCA-1C7CE8C6F79D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7461DCE8-0A39-458F-9BCA-1C7CE8C6F79D}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
